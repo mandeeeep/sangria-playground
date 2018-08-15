@@ -8,6 +8,10 @@ GET        /graphql              controllers.Application.graphql(query: String, 
 POST       /graphql              controllers.Application.graphqlBody
 GET        /render-schema        controllers.Application.renderSchema
 GET        /graphiql             controllers.Application.graphiql
+GET        /graphql-batch              controllers.BatchApplication.graphql(query: String, variables: Option[String], operation: Option[String])
+POST       /graphql-batch              controllers.BatchApplication.graphqlBody
+GET        /render-schema-batch        controllers.BatchApplication.renderSchema
+GET        /graphiql-batch             controllers.BatchApplication.graphiql
 
 # Map static resources from the /public folder to the /assets URL path
 GET        /assets/*file         controllers.Assets.versioned(path="/public", file: Asset)

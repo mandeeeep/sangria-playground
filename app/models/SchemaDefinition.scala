@@ -2,7 +2,7 @@ package models
 
 import sangria.execution.deferred.{Fetcher, HasId}
 import sangria.schema._
-
+import sangria.execution.batch.BatchExecutor
 import scala.concurrent.Future
 
 /**
@@ -119,4 +119,5 @@ object SchemaDefinition {
     ))
 
   val StarWarsSchema = Schema(Query)
+  val StarWarsBatchSchema = Schema(Query, directives = BuiltinDirectives :+ BatchExecutor.ExportDirective)
 }
